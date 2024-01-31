@@ -70,7 +70,7 @@ export CHAOS_KEY=""; # please insert your chaos key here
 2. It will collect all the result for every target into a seperated directory. 
 
 ----------------------------------------
-## Tools useds
+## Tools
 - subfinder
 - findomain
 - assetfinder
