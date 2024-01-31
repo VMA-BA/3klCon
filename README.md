@@ -1,7 +1,7 @@
 # 3klCon Project
 
 ## Description
-Automated Recon tool which works with Small and Medium scopes. 
+Automated Recon tool which works with Large and Medium scopes. 
 
 ّIt's recommended to use it on VPS, it'll discover secrets and searching for vulnerabilities 
 
