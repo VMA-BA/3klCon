@@ -1,86 +1,92 @@
-# 3klCon Project v1.0
+# 3klCon Project
 
 ## Description
-Full Automation Recon tool which works with Small and Medium scopes. 
+Automated Recon tool which works with Small and Medium scopes. 
 
 ّIt's recommended to use it on VPS, it'll discover secrets and searching for vulnerabilities 
 
 **So, Welcome and let's deep into it <3**
 
-![Welcome](Welcome.png)
+![Welcome](https://github.com/eslam3kl/3klCon/blob/main/logo.jpg)
 
 
 ----------------------------------------
-## Updates 
-### Version 1.1, what's new? (Very Recommended)
-1. Upgrading to python3 
-2. Adding Bash version, if you have any problem with Python. 
-3. Fixing multiple issues with the used tools. 
-4. Editing the tool's methedology, you can check it there :) 
-5. Editing the selected tools, change some and use more tools 
-6. Editing some processes to be as a user option like directory bruteforcing and port scan 
+## What're the tasks it will do? 
+1. Search for subdomains using different tools and resources (Subfinder - Findomain - Amass - Assetfinder - Archive.Org - RapidDNS.io - Riddler.io - JLDC - GitHub-Subdomains - Chaos)
+2. Search for the 3rd level of subdomains by extracting them using simple Python script and enumerate them using (Subfinder - Findomain - Assetfinder - Archive.Org)
+3. Resolving Subdomains with basic web ports 80 and 443
+4. Resolving Subdomains with Special Web ports 81,3000,3001,8000,8080,8443,10000,9000,9443
+5. Port scanning for all discovered assets using Naabu
+6. Search for Wayback records using (Hakrawler - GauPlus)
+7. Enumerate JavaScript files using (SubJs - Wayback Records)
+8. Extract the files with interesting extensions
+9. Search for Admin and login panels
+10. Scan the assets using Nuclei
 
 ----------------------------------------
 ## Installation instructions
+#### 1. Run the following script to check what tools you need to install 
+```
+# ./check_tools.sh 
+Checking for tool installation...
+--> subfinder is installed.
+--> findomain is installed.
+--> assetfinder is installed.
+--> amass is installed.
+--> anew is installed.
+--> github-subdomains is not installed. You can install it from https://github.com/gwen001/github-search/releases
+--> chaos is installed.
+--> hakrawler is installed.
+--> gauplus is installed.
+--> subjs is installed.
+--> httpx is installed.
+--> python3 is installed.
+--> naabu is installed.
+--> nuclei is installed.
+```
 
-#### 1. Befor ANY installation instruction: You MUST be the _ROOT_ user
-`  $ su - `
+#### 2. Create your targets.txt file (Target per line)
+```
+hackerone.com
+bugcrowd.com
+google.com
+```
 
-Because some of tools and dependencies will need the root permission
+#### 3. Open 3klcon.sh file and put your CHAOS API Key
+```
+export CHAOS_KEY=""; # please insert your chaos key here
+```
 
+#### 4. Open `github_tokens.txt`z file and put your API keys.
 
-#### 2. Install required tools (You MUST run it even if you install the used tools) 
-
-` chmod +x install_tools.sh `
-
-` ./install_tools.sh ` 
-
-
-#### 3. Running tool (Preferred to use python2 not python3)
-
-` python 3klcon.py -t target.com ` 
-
-#### 4. Check that you already installed the last version of GO because some tools require to be updated! 
+#### 5. Run the tool
+```
+./3klcon.sh targets.txt
+```
 
 ----------------------------------------
 ## Notes
-[+] If you face any problem at the installation process, check that: 
-    
-    1. You logged in as ROOT user not normal user 
-    2. Check that you installed the GO language and this path is exist /root/go/bin  
-  
-[+] It will take almost 5 ~ 6 hours running if your target is a medium. So, be _Patient_ or use VPS and sleep while running :) 
-
-[+] It will collect all the result into one directory with your target name 
-
-[+] Some of tools may need your reaction like entering your GitHub's 2FA or username, password, etc.
+1. It will take almost 1 ~ 2 hours running if your target is a medium. So, be _Patient_ or use VPS and sleep while running :) 
+2. It will collect all the result for every target into a seperated directory. 
 
 ----------------------------------------
 ## Tools useds
-1. Subfinder
-2. Assetfinder 
-3. Altdns
-4. Dirsearch
-5. Httpx
-6. Waybackurls
-7. Gau
-8. Git-hound
-9. Gitdorks.sh
-10. Naabu
-11. Gf
-12. Gf-templetes
-13. Nuclei
-14. Nuclei-templets
-15. Subjack
-16. Port_scan.sh
-
-----------------------------------------
-## Thanks to
-[Aly Khaled](https://github.com/null-aly) 
-
-[Harsh Bothra](https://github.com/harsh-bothra) 
+subfinder
+findomain
+assetfinder
+amass
+anew
+github-subdomains
+chaos
+hakrawler
+gauplus
+subjs
+httpx
+python3
+naabu
+nuclei
 
 ----------------------------------------
 
 ## Stay in touch <3 
-[LinkedIn](https://www.linkedin.com/in/eslam3kl/) | [Blog](https://eslam3kl.medium.com/)  |  [Twitter](https://twitter.com/eslam3kll)
+[LinkedIn](https://www.linkedin.com/in/eslam3kl/) | [Blog](https://eslam3kl.gitbook.io/)
