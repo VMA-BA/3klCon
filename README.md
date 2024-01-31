@@ -71,20 +71,20 @@ export CHAOS_KEY=""; # please insert your chaos key here
 
 ----------------------------------------
 ## Tools useds
-subfinder
-findomain
-assetfinder
-amass
-anew
-github-subdomains
-chaos
-hakrawler
-gauplus
-subjs
-httpx
-python3
-naabu
-nuclei
+- subfinder
+- findomain
+- assetfinder
+- amass
+- anew
+- github-subdomains
+- chaos
+- hakrawler
+- gauplus
+- subjs
+- httpx
+- python3
+- naabu
+- nuclei
 
 ----------------------------------------
 
