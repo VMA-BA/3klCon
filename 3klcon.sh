@@ -55,7 +55,6 @@ collect_subdomains() {
 
     cd ../ || exit
 
-    tail -10 all_collected_subdomains.txt > test.txt; 
 }
 
 collect_subdomains_from_third_level() {
