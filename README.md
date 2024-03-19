@@ -17,7 +17,7 @@ Automated Recon tool which works with Large and Medium scopes.
 3. Resolving Subdomains with basic web ports 80 and 443
 4. Resolving Subdomains with Special Web ports 81,3000,3001,8000,8080,8443,10000,9000,9443
 5. Port scanning for all discovered assets using Naabu
-6. Search for Wayback records using (Hakrawler - GauPlus)
+6. Search for Wayback records using (Hakrawler - Gau)
 7. Enumerate JavaScript files using (SubJs - Wayback Records)
 8. Extract the files with interesting extensions
 9. Search for Admin and login panels
@@ -37,7 +37,7 @@ Checking for tool installation...
 --> github-subdomains is not installed. You can install it from https://github.com/gwen001/github-search/releases
 --> chaos is installed.
 --> hakrawler is installed.
---> gauplus is installed.
+--> gau is installed.
 --> subjs is installed.
 --> httpx is installed.
 --> python3 is installed.
@@ -79,7 +79,7 @@ export CHAOS_KEY=""; # please insert your chaos key here
 - github-subdomains
 - chaos
 - hakrawler
-- gauplus
+- gau
 - subjs
 - httpx
 - python3
