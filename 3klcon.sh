@@ -23,16 +23,16 @@ collect_subdomains() {
     amass enum -passive -norecursive -d "$1" -o "amass_$1.txt" >/dev/null 2>&1; 
     
     echo -e "(*) Starting RapidDNS.io"
-    curl -s "https://rapiddns.io/subdomain/$1?full=1#result" | ggrep "<td><a" | cut -d '"' -f 2 | grep http | cut -d '/' -f3 | sed 's/#results//g' | anew "rapiddns_$1.txt" >/dev/null 2>&1;
+    curl -s "https://rapiddns.io/subdomain/$1?full=1#result" | grep "<td><a" | cut -d '"' -f 2 | grep http | cut -d '/' -f3 | sed 's/#results//g' | anew "rapiddns_$1.txt" >/dev/null 2>&1;
     
     echo -e "(*) Starting Riddler.io"
-    curl -s "https://riddler.io/search/exportcsv?q=pld:$1" | ggrep -Po "(([\w.-]*)\.([\w]*)\.([A-z]))\w+" | anew "riddler_$1.txt" >/dev/null 2>&1;
+    curl -s "https://riddler.io/search/exportcsv?q=pld:$1" | grep -Po "(([\w.-]*)\.([\w]*)\.([A-z]))\w+" | anew "riddler_$1.txt" >/dev/null 2>&1;
     
     echo -e "(*) Starting Archive.Org"
     curl -s "http://web.archive.org/cdx/search/cdx?url=*.$1/*&output=text&fl=original&collapse=urlkey" | sed -e 's_https*://__' -e "s/\/.*//" | anew "archive_$1.txt" >/dev/null 2>&1;
     
     echo -e "(*) Starting JLDC"
-    curl -s "https://jldc.me/anubis/subdomains/$1" | ggrep -Po "((http|https):\/\/)?(([\w.-]*)\.([\w]*)\.([A-z]))\w+" | anew "jldc_$1.txt" >/dev/null 2>&1;
+    curl -s "https://jldc.me/anubis/subdomains/$1" | grep -Po "((http|https):\/\/)?(([\w.-]*)\.([\w]*)\.([A-z]))\w+" | anew "jldc_$1.txt" >/dev/null 2>&1;
     
     # Check if github_tokens_file exists before running github-subdomains
     if [ -s "github_tokens.txt" ]; then
